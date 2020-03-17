@@ -1,0 +1,18 @@
+<!--
+ 
+This version is best that other one 'Accepted_EULA._office_2016 (version old).reg'
+Desc.import this {key + value + data} in tag Virtual Registry of DeploymentConfig.xml
+for more info just check O/P
+O/P:
+    (all logic) : http://pix.toile-libre.org/upload/original/1544905115.png
+    Only tag <Virtual Registry> : http://pix.toile-libre.org/upload/original/1548326583.png
+ 
+SRC [HKEY_CURRENT_USER\Software\Microsoft\office\16.0\Registration]
+"AcceptAllEulas"=dword:00000001
+ 
+-->
+ 
+<!-- Virtual Registry -->
+    <Key Path="\REGISTRY\USER\[{AppVCurrentUserSID}]\Software\Microsoft\Office\16.0\Registration">
+        <Value Type="REG_DWORD" Name="AcceptAllEulas" Data="1"/>
+    </Key>
