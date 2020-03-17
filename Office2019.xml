@@ -1,0 +1,46 @@
+<!--   
+    ODT365 (1/17/2020) :
+    https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_12325-20288.exe
+ 
+    Office Customization Tool:
+    https://config.office.com/deploymentsettings
+ 
+    Download:
+    .\setup /download .\Office2019.xml
+ 
+    Install:
+    .\setup /config .\Office2019.xml
+-->
+<Configuration ID="47df6530-7f43-453e-b980-ee66ab53b940">
+  <Info Description="xml pc aide (GPLv3)" />
+  <Add OfficeClientEdition="32" Channel="PerpetualVL2019">
+                                <!-- PIDKEY="KMS" -->
+    <Product ID="ProPlus2019Volume" PIDKEY="NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP">
+      <Language ID="fr-fr" />
+      <Language ID="MatchPreviousMSI" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Excel" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="PowerPoint" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Word" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="PinIconsToTaskbar" Value="FALSE" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI>
+    <IgnoreProduct ID="PrjPro" />
+  </RemoveMSI>
+  <AppSettings>
+    <Setup Name="Company" Value="xml pc aide" />
+  </AppSettings>
+  <Display Level="None" AcceptEULA="TRUE" />
+  <Logging Name="ODT2019.txt" Level="Standard" Path="%tmp%" />
+</Configuration>
