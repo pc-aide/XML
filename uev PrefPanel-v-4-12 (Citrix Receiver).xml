@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+    https://youtu.be/acGb5KDm494
+    Create Template (generator.exe): C:\Users\win10.PALETS\AppData\Local\Citrix\ICA Client\Receiver\PrefPanel.exe
+   
+    get-process -name *receiv* -> receiver (background: icon tray)
+ 
+    Feature <tag>: https://github.com/MicrosoftDocs/windows-itpro-docs/blob/master/windows/configuration/ue-v/uev-application-template-schema-reference.md
+ 
+-->
+<SettingsLocationTemplate xmlns="http://schemas.microsoft.com/UserExperienceVirtualization/2013A/SettingsLocationTemplate">
+  <Name>PrefPanel</Name>
+  <ID>Citrix-Receiver-PrefPanel-v-4-12</ID>
+  <Version>1</Version>
+  <Processes>
+    <Process>
+      <Filename>PrefPanel.exe</Filename>
+      <ProductVersion>
+        <Major Minimum="4" Maximum="4" />
+        <Minor Minimum="12" Maximum="12" />
+      </ProductVersion>
+      <FileVersion>
+        <Major Minimum="4" Maximum="4" />
+        <Minor Minimum="12" Maximum="12" />
+      </FileVersion>
+    </Process>
+  </Processes>
+  <Settings>
+    <PreventOverlappingSynchronization>false</PreventOverlappingSynchronization>
+    <Registry>
+      <Path Recursive="true">Software\Citrix</Path>
+    </Registry>
+  </Settings>
+</SettingsLocationTemplate>
