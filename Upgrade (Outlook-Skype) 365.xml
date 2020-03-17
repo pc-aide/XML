@@ -1,0 +1,47 @@
+<!--
+-----------------------------------------------------
+    Configuration.xml <- https://imgur.com/iCl1MT5
+   
+    ProPlusr <- Office Professionnel Plus 2013
+ 
+    /download <- https://imgur.com/vXnWtVx
+        E.g: .\setup.exe /download .\Configuration.xml
+ 
+    Office Customization Tool
+        https://config.office.com/deploymentsettings
+ 
+    /Install <- https://imgur.com/BctSDL4
+        E.g: .\setup.exe /configure .\Configuration.xml
+ 
+    Need restart: yes
+-----------------------------------------------------
+-->
+ 
+<Configuration>
+  <Add OfficeClientEdition="32" Channel="Broad" MigrateArch="TRUE">
+    <Product ID="O365ProPlusRetail">
+      <Language ID="en-us" />
+      <ExcludeApp ID="Access" />
+      <ExcludeApp ID="Excel" />
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="PowerPoint" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Teams" />
+      <ExcludeApp ID="Word" />
+    </Product>
+  </Add>
+  <Property Name="SharedComputerLicensing" Value="0" />
+  <Property Name="PinIconsToTaskbar" Value="FALSE" />
+  <Property Name="SCLCacheOverride" Value="0" />
+  <Property Name="AUTOACTIVATE" Value="0" />
+  <Property Name="FORCEAPPSHUTDOWN" Value="FALSE" />
+  <Property Name="DeviceBasedLicensing" Value="0" />
+  <Updates Enabled="TRUE" />
+  <RemoveMSI>
+    <IgnoreProduct ID="ProPlusr" />
+  </RemoveMSI>
+  <Display Level="Full" AcceptEULA="TRUE" />
+  <Logging Level="Standard" Path="%tmp%" />
+</Configuration>
