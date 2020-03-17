@@ -1,0 +1,42 @@
+<!--
+        Config.xml file reference for Office 2013:
+        https://docs.microsoft.com/en-us/previous-versions/office/office-2013-resource-kit/cc179195%28v%3doffice.15%29#setting-element
+       
+        O/P:
+            GUI -> https://imgur.com/a/QSGUf6n
+            CLI -> https://imgur.com/a/Fav3pDv
+           
+        InstallDirectory: c:\progra~2\Common Files\microsoft shared\OFFICE15\Office Setup Controller
+        Syntax: setup.exe /modify <Product ID> /config <File_to_create.xml>
+        Usage: setup.exe /modify proplusr /config Disabled_Lync_and_outlook.xml
+        NB: "proplusr" where we can find out in <InstallDirectory>\PROPLUSR\SETUP.XML for the Product ID
+-->
+<Configuration Product="Standard">
+    <Logging Type="standard" Path="%tmp%" Template="Disabled_Lync_and_outlook.txt" />
+    <!-- Display Level="None" | "Basic" | "Full"(default) -->
+    <Display Level="None" CompletionNotice="Yes" SuppressModal="Yes"
+    AcceptEula="Yes" NoCancel="Yes" />
+    <!-- Path of the folder on the user's computer where the product is installed -->
+    <INSTALLLOCATION Value="%ProgramFiles(x86)%\Microsoft Office" />
+    <Setting Id="SETUP_REBOOT" Value="never" />
+    <!--
+        Disabled or Enabled Features
+        C:\progra~2\Common Files\microsoft shared\OFFICE15\Office Setup Controller\PROPLUSR\SETUP.XML
+        The setup.xml where we can find out the ProductID
+       
+        SYNTAX
+        <OptionState State="Absent" | "Advertise" | "Local" Children="Force" Id="ProductID" />
+    -->
+    <!-- Excel -->
+    <OptionState State="Local" Children="Force" Id="EXCELFiles" />
+    <!-- Disabled Outlook
+            Shortcuts disappear: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Microsoft Office 2013\Outlook 2013.lnk
+    -->
+    <OptionState State="Absent" Children="Force" Id="OUTLOOKFiles" />
+    <!-- PowerPoint -->
+    <OptionState State="Local" Children="Force" Id="PPTFiles" />
+    <!-- Word -->
+    <OptionState State="Local" Children="Force" Id="WORDFiles" />
+    <!-- Disabled Skype 2015 -->
+    <OptionState State="Absent" Children="Force" Id="LyncCoreFiles" />
+</Configuration>
