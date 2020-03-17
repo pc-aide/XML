@@ -1,0 +1,30 @@
+<!--
+    DL: https://download.microsoft.com/download/6/2/3/6230F7A2-D8A9-478B-AC5C-57091B632FCF/officedeploymenttool_x86_5031-1000.exe
+ 
+    All attributes: https://github.com/iothacker/Microsoft-Office-365-Business-Group-Policy-ADMX-Templates/blob/master/en-US/office16-365.adml
+   
+    Assistant Cfg xml file: https://config.office.com/deploymentsettings
+ 
+https://docs.microsoft.com/en-us/deployoffice/configuration-options-for-the-office-2016-deployment-tool
+-->
+<Configuration>
+    <Add OfficeClientEdition="64" >
+        <Product ID="O365ProPlusRetail">
+          <Language ID="fr-fr" />
+          <ExcludeApp ID="Access" />
+     <!-- <ExcludeApp ID="Excel" /> -->
+      <ExcludeApp ID="Groove" />
+      <ExcludeApp ID="InfoPath" />
+      <ExcludeApp ID="Lync" />
+      <ExcludeApp ID="OneDrive" />
+      <ExcludeApp ID="OneNote" />
+      <ExcludeApp ID="Outlook" />
+      <ExcludeApp ID="PowerPoint" />
+      <ExcludeApp ID="Publisher" />
+      <ExcludeApp ID="Word" />
+        </Product>
+    </Add>  
+  <Display Level="None" AcceptEULA="TRUE" />  
+<!-- Package guids -> Powershell -> New-Guid -->
+    <Property Name="PACKAGEGUID" Value="" />
+</Configuration>
