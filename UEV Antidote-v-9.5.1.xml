@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+    youtube:
+   
+    Feature <tag>: https://github.com/MicrosoftDocs/windows-itpro-docs/blob/master/windows/configuration/ue-v/uev-application-template-schema-reference.md
+   
+    (background: icon tray -> get-process -name *agentAntidote*)
+-->
+<SettingsLocationTemplate xmlns="http://schemas.microsoft.com/UserExperienceVirtualization/2013A/SettingsLocationTemplate">
+  <Name>Antidote</Name>
+  <ID>Antidote-9-Antidote-v-9-5</ID>
+  <Version>1</Version>
+  <Processes>
+    <Process>
+      <Filename>Antidote.exe</Filename>
+      <ProductVersion>
+        <Major Minimum="9" Maximum="9" />
+      </ProductVersion>
+      <FileVersion>
+        <Major Minimum="9" Maximum="9" />
+        <Minor Minimum="5" Maximum="5" />
+      </FileVersion>
+    </Process>
+  </Processes>
+  <Settings>
+    <PreventOverlappingSynchronization>false</PreventOverlappingSynchronization>
+    <Registry>
+      <Path Recursive="true">Software\Druide informatique inc.</Path>
+    </Registry>
+    <Registry>
+      <Path Recursive="true">Software\QtProject</Path>
+    </Registry>
+    <File>
+      <Root>
+        <EnvironmentVariable>APPDATA</EnvironmentVariable>
+      </Root>
+      <Path>Druide\Antidote</Path>
+      <FileMask>ConfigurationMenuAntidote9</FileMask>
+    </File>
+  </Settings>
+</SettingsLocationTemplate>
