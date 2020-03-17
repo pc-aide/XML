@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <!--
+   Docs: https://docs.microsoft.com/en-us/microsoft-desktop-optimization-pack/appv-v5/about-the-connection-group-file#structure-of-the-connection-group-xml-file
+   
+    PakcageID-VersionID: Powershell: new-guid or [Guid]::newGuid()
+    O/P:https://imgur.com/ZQDuYl3
+    Plugins:
+   1)Power Query
+   2)Power Map
+   3)Power Pivot
+   4)Power Preview
+   
+   If used DeploymentConfig.xml:
+ 
+   each package, have to this idem property:
+   1)Search:
+        a) <com mode
+     InProcessEnabled="false"
+ 
+     b) <object
+        Enabled=false
+ 
+ -->
+<appv:AppConnectionGroup
+ xmlns="http://schemas.microsoft.com/appv/2014/virtualapplicationconnectiongroup"
+ xmlns:appv="http://schemas.microsoft.com/appv/2014/virtualapplicationconnectiongroup"
+ AppConnectionGroupId="61BE9B14-D2B4-41CE-A6E3-A1B658DE7000"
+ VersionId="E6B6AA57-F2A7-49C9-ADF8-F2B5B3C8A42F"
+ Priority="0"
+ DisplayName="Plugins_Excel_x64">
+  <appv:Packages>
+    <appv:Package
+     DisplayName="3_Plguings_Excel_x64"
+     PackageId="da80f004-bfb5-499e-9b4b-466f79cbbcb2"
+     VersionId="cf3eb53f-4de0-498a-980c-0d4f94355e95"
+   />
+    <appv:Package
+    DisplayName="Microsoft Office 15 O365ProPlusRetail_fr-fr_x64"
+    PackageId="499aec9f-a5fe-4953-98ef-4b1cd3f8d2ef"
+    VersionId="b979f52e-418a-47aa-a451-1031e2839b9e"
+  />
+ </appv:Packages>
+</appv:AppConnectionGroup>
