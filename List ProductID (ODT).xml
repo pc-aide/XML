@@ -1,0 +1,66 @@
+<!--
+
+-->
+<Root>
+	<Edition Name="Outlook 2013/2016">
+		<!-- -->
+		<ProductID>OutlookRetail</ProductID>
+		<!-- -->
+		<ProductID>Outlook2019Retail</ProductID>
+		<!-- -->
+		<ProductID>Outlook2019Volume</ProductID>
+	</Edition>
+	<Edition Name="OneNote 2013/2016">
+		<ProductID>OneNoteRetail</ProductID>
+	</Edition>
+	<Edition Name="Visio 2013/2016 Professional">
+		<ProductID>VisioProRetail</ProductID>
+	</Edition>
+	<Edition Name="Visio 2013/2016 Professional volume license">
+		<ProductID>VisioProXVolume</ProductID>
+		<ProductID>VisioPro2019Retail</ProductID>
+		<ProductID>VisioPro2019Volume</ProductID>
+	</Edition>
+	<Edition Name="Visio 2013/2016 Standard">
+		<ProductID>VisioStdRetail</ProductID>
+	</Edition>
+	<Edition Name="Visio 2013/2016 Standard volume license">
+		<ProductID>VisioStdXVolume</ProductID>
+		<ProductID>VisioStd2019Retail</ProductID>
+		<ProductID>VisioStd2019Volume</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business Basic 2015 (Office 2013)">
+		<ProductID>LyncEntryRetail</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business 2015 (Office 2013)">
+		<ProductID>LyncRetail</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business Basic 2016 (Office 2016)">
+		<ProductID>SkypeforBusinessEntryRetail</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business 2016 (Office 2016)">
+		<ProductID>SkypeforBusinessRetail</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business 2019 (volume licensed)">
+		<ProductID>SkypeforBusiness2019Volume</ProductID>
+	</Edition>
+	<Edition Name="Skype for Business Basic 2019">
+		<ProductID>SkypeforBusiness2019Retail</ProductID>
+	</Edition>
+	<Edition Name="Project 2013/2016 Standard">
+		<ProductID>ProjectStdRetail</ProductID>
+	</Edition>
+	<Edition Name="Project 2013/2016 Professional">
+		<ProductID>ProjectProRetail</ProductID>
+	</Edition>
+	<Edition Name="Project 2013/2016 Standard volume license">
+		<ProductID>ProjectStdXVolume</ProductID>
+		<ProductID>ProjectStd2019Retail</ProductID>
+		<ProductID>ProjectStd2019Volume</ProductID>
+		<ProductID>ProPlus2019Volume</ProductID>
+	</Edition>
+	<Edition Name="Office 2013/2016 Professional">
+		<ProductID>ProfessionalRetail</ProductID>
+		<ProductID>Professional2019Retail</ProductID>
+	</Edition>
+</Root>
