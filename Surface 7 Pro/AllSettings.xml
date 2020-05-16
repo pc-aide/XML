@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+DDL (Download Direct Link) :
+https://download.microsoft.com/download/8/2/E/82EEFB07-1AB3-4557-B654-B34D64C9DD94/SurfaceUEFI_Manager_v2.70.139.0_x64.msi
+
+This document contains every setting supported on the Surface Platforms and should be used 
+by tools to provide name, id, help information.
+
+See MsSystemSettingTypes.h in UEFI for setting IDs
+  //
+-->
+<AllSettings xmlns="urn:UefiSettings-Schema" ConfigurationMechanism="2" UefiFamily="Surface Pro 7" SettingsVersion="1">
+  <Date>2017-06-08</Date>
+  <Settings>
+    <Setting Type="SecureBootSettingType" Group="Automation" Category="SecureBoot" Default="MsPlus3rdParty">
+      <Id>200</Id>
+      <Name>Secure Boot Keys</Name>
+      <Help>Secure Boot signing keys to enable for EFI applications</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Security" Default="Enabled">
+      <Id>300</Id>
+      <Name>Trusted Platform Module (TPM)</Name>
+      <Help>TPM device enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Accessories" Default="Enabled">
+      <Id>301</Id>
+      <Name>Docking USB Port</Name>
+      <Help>Docking USB Port enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Cameras" Default="Enabled">
+      <Id>302</Id>
+      <Name>Front Camera</Name>
+      <Help>Front Camera enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Radio" Default="Enabled">
+      <Id>303</Id>
+      <Name>Bluetooth</Name>
+      <Help>Bluetooth radio enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Cameras" Default="Enabled">
+      <Id>304</Id>
+      <Name>Rear Camera</Name>
+      <Help>Rear Camera enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Cameras" Default="Enabled">
+      <Id>305</Id>
+      <Name>IR Camera</Name>
+      <Help>InfraRed Camera enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Radio" Default="Enabled">
+      <Id>308</Id>
+      <Name>Wi-Fi and Bluetooth</Name>
+      <Help>Wi-Fi and Bluetooth enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Accessories" Default="Enabled">
+      <Id>310</Id>
+      <Name>Type Cover</Name>
+      <Help>Surface Type Cover connector</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Radio" Default="Enabled">
+      <Id>312</Id>
+      <Name>LTE</Name>
+      <Help>LTE modem enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>317</Id>
+      <Name>Wake on LAN</Name>
+      <Help>Wake device on LAN enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>318</Id>
+      <Name>Wake on Power</Name>
+      <Help>Wake device on power enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Accessories" Default="Enabled">
+      <Id>320</Id>
+      <Name>On-board Audio</Name>
+      <Help>On-board audio enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Device" Category="Accessories" Default="Enabled">
+      <Id>330</Id>
+      <Name>Micro SD Card</Name>
+      <Help>Micro SD Card enabled or disabled</Help>
+    </Setting>
+    <Setting Type="UsbPortSettingType" Group="Automation" Category="Accessories" Default="UsbPortEnabled">
+      <Id>370</Id>
+      <Name>USB Port 1</Name>
+      <Help>Side USB Port (1)</Help>
+    </Setting>
+    <Setting Type="UsbPortSettingType" Group="Automation" Category="Accessories" Default="UsbPortEnabled">
+      <Id>371</Id>
+      <Name>USB Port 2</Name>
+      <Help>Side USB Port (2)</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>400</Id>
+      <Name>IPv6 for PXE Boot</Name>
+      <Help>Enable IPv6 PXE boot before IPv4 PXE boot</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Enabled">
+      <Id>401</Id>
+      <Name>Alternate Boot</Name>
+      <Help>Alternate Boot allows users to override the boot order by holding the volume down button when powering up the device</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>402</Id>
+      <Name>Boot Order Lock</Name>
+      <Help>Boot Order variable lock enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Enabled">
+      <Id>403</Id>
+      <Name>USB Boot</Name>
+      <Help>Enable booting from USB devices</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>404</Id>
+      <Name>Auto Power On</Name>
+      <Help>Enable automatic power-on after power loss</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Boot" Default="Disabled">
+      <Id>406</Id>
+      <Name>Network Stack</Name>
+      <Help>Enable network stack in UEFI</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="Security" Default="Enabled">
+      <Id>316</Id>
+      <Name>SMT</Name>
+      <Help>Simultaneous Multithreading enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Automation" Category="Security" Default="Disabled">
+      <Id>500</Id>
+      <Name>TPM clear EFI protocol</Name>
+      <Help>Enable EFI protocol for invoking TPM clear</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="UEFI Front Page" Default="Enabled">
+      <Id>600</Id>
+      <Name>Security</Name>
+      <Help>UEFI Security Page Display enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="UEFI Front Page" Default="Enabled">
+      <Id>601</Id>
+      <Name>Devices</Name>
+      <Help>UEFI Devices Page Display enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="UEFI Front Page" Default="Enabled">
+      <Id>602</Id>
+      <Name>Boot</Name>
+      <Help>UEFI Boot Manager Page Display enabled or disabled</Help>
+    </Setting>
+    <Setting Type="EnableSettingType" Group="Advanced" Category="UEFI Front Page" Default="Enabled">
+      <Id>603</Id>
+      <Name>DateTime</Name>
+      <Help>UEFI DateTime Page Display enabled or disabled</Help>
+    </Setting>
+    <Setting Type="BatteryProfileSettingType" Group="Advanced" Category="Kiosk Overrides" Default="0">
+      <Id>407</Id>
+      <Name>Battery Limit</Name>
+      <Help>Active management scheme for battery usage pattern</Help>
+    </Setting>
+  </Settings>
+</AllSettings>
