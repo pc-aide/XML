@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:UefiSettings-Schema"
+    elementFormDefault="qualified"
+    targetNamespace="urn:UefiSettings-Schema"
+  >
+  <!-- ######################################################################################### -->
+  <!-- ############################### Describe the documents ################################## -->
+  <!-- ######################################################################################### -->
+  <xs:element name="SettingsPacket" type="ConfigPacket" />
+  <!-- XML packets to get settings between Tool and FW -->
+
+  <xs:element name="ResultsPacket" type="ResultConfigPacket" />
+  <!-- Packet used to send results of set/verify operation from FW to Tool -->
+
+  <xs:element name="AllSettings" type="AllSettingsType" />
+  <!-- Xml Doc used to describe all settings for tool consumption -->
+
+  <xs:element name="CurrentSettingsPacket" type="CurrentConfigPacket" />
+  <!-- XML describing current settings at boot -->
+
+  <!-- ######################################################################################### -->
+  <!-- ##################### Describe some simple and complex types ############################ -->
+  <!-- ######################################################################################### -->
+  <xs:complexType name="CurrentConfigPacket">
+    <xs:sequence>
+      <xs:element name="Date" type="xs:dateTime" />
+      <xs:element name="Settings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SettingCurrent" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="LSV" type="xs:unsignedInt" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConfigPacket">
+    <xs:sequence>
+      <xs:element name="CreatedBy" type="xs:string" />
+      <xs:element name="CreatedOn" type="xs:date" />
+      <xs:element name="Version" type="xs:unsignedInt" />
+      <xs:element name="LowestSupportedVersion" type="xs:unsignedInt" />
+      <xs:element name="Settings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="Setting" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ResultConfigPacket">
+    <xs:sequence>
+      <xs:element name="AppliedOn" type="xs:string" />
+      <xs:element name="Settings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="SettingResult" type="ResultType" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ResultType">
+    <xs:sequence>
+      <xs:group ref="SettingGroup"/>
+      <xs:element name="Flags" type="LongHex" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Result" type="LongHex" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UsbPortSettingType">
+    <xs:complexContent>
+      <xs:extension base="BaseSettingType">
+        <xs:sequence>
+          <xs:group ref="SettingGroup"/>
+          <xs:element name="Value" type="UsbPortType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="EnableSettingType">
+    <xs:complexContent>
+      <xs:extension base="BaseSettingType">
+        <xs:sequence>
+          <xs:group ref="SettingGroup"/>
+          <xs:element name="Value" type="EnableType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+ <xs:complexType name="PasswordType">
+    <xs:complexContent>
+      <xs:extension base="BaseSettingType">
+        <xs:sequence>
+          <xs:group ref="SettingGroup"/>
+          <xs:element name="Value" type="UEFIPasswordType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+    
+  <xs:complexType name="SecureBootSettingType">
+    <xs:complexContent>
+      <xs:extension base="BaseSettingType">
+        <xs:sequence>
+          <xs:group ref="SettingGroup"/>
+          <xs:element name="Value" type="SecureBootKeyEnumType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BatteryProfileSettingType">
+    <xs:complexContent>
+      <xs:extension base="BaseSettingType">
+        <xs:sequence>
+          <xs:group ref="SettingGroup"/>
+          <xs:element name="Value" type="BatteryProfileEnumType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:group name="SettingGroup">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:unsignedLong" />
+    </xs:sequence>
+  </xs:group>
+
+  <!-- Simple On / Off types -->
+  <xs:complexType name="BaseSettingType" abstract="true">
+  </xs:complexType>
+
+  <xs:element name="Setting" type="BaseSettingType"/>
+
+  <xs:simpleType name="EnableType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="Enabled|Disabled"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="UsbPortType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="UsbPortEnabled|UsbPortHwDisabled"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="AssetTagType">
+    <xs:restriction base="xs:string">
+      <xs:length value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SecureBootKeyEnumType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None"/>
+      <xs:enumeration value="MsOnly"/>
+      <xs:enumeration value="MsPlus3rdParty"/>
+      <xs:enumeration value="Custom"/>
+      <!-- This should only be valid on return, not to set. -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="BatteryProfileEnumType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="0"/> <!-- Normal -->
+      <xs:enumeration value="1"/> <!-- Battery Limit -->
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="AllSettingsType">
+    <xs:sequence>
+      <xs:element name="Date" type="xs:date" />
+      <xs:element name="Settings">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Setting" maxOccurs="unbounded" type="SettingDescType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="ConfigurationMechanism" type="xs:unsignedInt"/>
+    <xs:attribute name="UefiFamily" type="xs:string"/>
+    <xs:attribute name="SettingsVersion" type="xs:unsignedInt"/>
+  </xs:complexType>
+
+  <xs:complexType name="SettingDescType">
+    <xs:sequence>
+      <xs:element name="Id" type="xs:unsignedShort"/>
+      <xs:element name="Name" type="xs:string" />
+      <xs:element name="Help" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="Type" type="xs:string"/>
+    <xs:attribute name="Group" type="xs:string"/>
+    <xs:attribute name="Category" type="xs:string"/>
+    <xs:attribute name="Default" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:simpleType name="ShortHex">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^0x[0-9A-Fa-f]{1,4}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="IntHex">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^0x[0-9A-Fa-f]{1,8}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="LongHex">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="^0x[0-9A-Fa-f]{1,16}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+  <xs:simpleType name="UEFIPasswordType">
+    <xs:restriction base="xs:string">
+        <!-- 
+        When we query the UEFI about its password,it will reply with 
+        "System Password Set" or "No System Password"
+        When we set a password in the UEFI, we send it a string of 150 hex digits 
+        -->
+        <xs:pattern value="^System Password Set|No System Password|[0-9A-Fa-f]{150}$"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
