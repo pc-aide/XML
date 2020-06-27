@@ -54,7 +54,7 @@
 			<DistinguishedName>
 				<DistinguishedNameDefinition Operator="Equal" Wildcard="Enabled" MatchCase="Disabled">
 					<Name>CN</Name>
-					<Pattern>VINO.RUS</Pattern>
+					<Pattern>.VINO.RUS</Pattern>
 				</DistinguishedNameDefinition>
 			</DistinguishedName>
 		</CertificateMatch>
