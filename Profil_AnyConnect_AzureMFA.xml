@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+	AnyConnect Profile Editor - VPN
+-->
 <AnyConnectProfile xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectProfile.xsd">
 	<ClientInitialization>
 		<UseStartBeforeLogon UserControllable="false">false</UseStartBeforeLogon>
