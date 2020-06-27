@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectProfile xmlns="http://schemas.xmlsoap.org/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectProfile.xsd">
+	<ClientInitialization>
+		<UseStartBeforeLogon UserControllable="false">false</UseStartBeforeLogon>
+		<AutomaticCertSelection UserControllable="false">true</AutomaticCertSelection>
+		<ShowPreConnectMessage>false</ShowPreConnectMessage>
+		<CertificateStore>Machine</CertificateStore>
+		<CertificateStoreMac>All</CertificateStoreMac>
+		<CertificateStoreOverride>true</CertificateStoreOverride>
+		<ProxySettings>Native</ProxySettings>
+		<AllowLocalProxyConnections>true</AllowLocalProxyConnections>
+		<AuthenticationTimeout>12</AuthenticationTimeout>
+		<AutoConnectOnStart UserControllable="false">false</AutoConnectOnStart>
+		<MinimizeOnConnect UserControllable="false">true</MinimizeOnConnect>
+		<LocalLanAccess UserControllable="false">false</LocalLanAccess>
+		<DisableCaptivePortalDetection UserControllable="false">false</DisableCaptivePortalDetection>
+		<ClearSmartcardPin UserControllable="false">true</ClearSmartcardPin>
+		<IPProtocolSupport>IPv4</IPProtocolSupport>
+		<AutoReconnect UserControllable="false">true
+			<AutoReconnectBehavior UserControllable="false">DisconnectOnSuspend</AutoReconnectBehavior>
+		</AutoReconnect>
+		<SuspendOnConnectedStandby>false</SuspendOnConnectedStandby>
+		<AutoUpdate UserControllable="false">false</AutoUpdate>
+		<RSASecurIDIntegration UserControllable="false">Automatic</RSASecurIDIntegration>
+		<WindowsLogonEnforcement>SingleLocalLogon</WindowsLogonEnforcement>
+		<LinuxLogonEnforcement>SingleLocalLogon</LinuxLogonEnforcement>
+		<WindowsVPNEstablishment>LocalUsersOnly</WindowsVPNEstablishment>
+		<LinuxVPNEstablishment>LocalUsersOnly</LinuxVPNEstablishment>
+		<AutomaticVPNPolicy>true
+			<TrustedDNSServers>10.56.0.107,10.56.0.108,10.33.0.107,10.33.0.108</TrustedDNSServers>
+			<TrustedNetworkPolicy>Pause</TrustedNetworkPolicy>
+			<UntrustedNetworkPolicy>DoNothing</UntrustedNetworkPolicy>
+			<AlwaysOn>false
+			</AlwaysOn>
+		</AutomaticVPNPolicy>
+		<PPPExclusion UserControllable="false">Disable
+			<PPPExclusionServerIP UserControllable="false"></PPPExclusionServerIP>
+		</PPPExclusion>
+		<EnableScripting UserControllable="false">false</EnableScripting>
+		<CertificateMatch>
+			<MatchOnlyCertsWithEKU>true</MatchOnlyCertsWithEKU>
+			<MatchOnlyCertsWithKU>true</MatchOnlyCertsWithKU>
+			<KeyUsage>
+				<MatchKey>Key_Encipherment</MatchKey>
+				<MatchKey>Digital_Signature</MatchKey>
+			</KeyUsage>
+			<ExtendedKeyUsage>
+				<ExtendedMatchKey>ClientAuth</ExtendedMatchKey>
+				<CustomExtendedMatchKey>1.23.456.7.8</CustomExtendedMatchKey>
+			</ExtendedKeyUsage>
+			<DistinguishedName>
+				<DistinguishedNameDefinition Operator="Equal" Wildcard="Enabled" MatchCase="Disabled">
+					<Name>CN</Name>
+					<Pattern>VINO.RUS</Pattern>
+				</DistinguishedNameDefinition>
+			</DistinguishedName>
+		</CertificateMatch>
+		<EnableAutomaticServerSelection UserControllable="false">false
+			<AutoServerSelectionImprovement>20</AutoServerSelectionImprovement>
+			<AutoServerSelectionSuspendTime>4</AutoServerSelectionSuspendTime>
+		</EnableAutomaticServerSelection>
+		<RetainVpnOnLogoff>false
+		</RetainVpnOnLogoff>
+		<CaptivePortalRemediationBrowserFailover>false</CaptivePortalRemediationBrowserFailover>
+		<AllowManualHostInput>true</AllowManualHostInput>
+	</ClientInitialization>
+	<ServerList>
+		<HostEntry>
+			<HostName>Remote_MFA</HostName>
+			<HostAddress>https://RemoteMFA.VINO.RUS</HostAddress>
+			<UserGroup>AzureMFA</UserGroup>
+		</HostEntry>
+	</ServerList>
+</AnyConnectProfile>
